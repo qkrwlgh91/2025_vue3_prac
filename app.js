@@ -8,6 +8,9 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    submitModifier() {
+      alert("submitted!!!!!");
+    },
     submitForm(event) {
       event.preventDefault();
       alert("submitted!!");
