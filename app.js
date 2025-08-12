@@ -4,18 +4,22 @@ const app = Vue.createApp({
       courseGoal: "remind vue3",
       vueLink: "https://vuejs.org/",
       counter: 0,
-      name: ''
+      name: "",
     };
   },
   methods: {
+    submitForm(event) {
+      event.preventDefault();
+      alert("submitted!!");
+    },
     setName(event, lastName) {
-        this.name = event.target.value + ' ' + lastName;
+      this.name = event.target.value + " " + lastName;
     },
     add(num) {
-        this.counter = this.counter + num;
+      this.counter = this.counter + num;
     },
     reduce(num) {
-        this.counter = this.counter - num;
+      this.counter = this.counter - num;
     },
   },
 });
