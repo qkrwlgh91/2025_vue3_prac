@@ -5,9 +5,13 @@ const app = Vue.createApp({
       vueLink: "https://vuejs.org/",
       counter: 0,
       name: "",
+      confirmName: '',
     };
   },
   methods: {
+    confirmInput() {
+        this.confirmName = this.name;
+    },
     submitModifier() {
       alert("submitted!!!!!");
     },
