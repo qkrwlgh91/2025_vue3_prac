@@ -3,7 +3,7 @@ const app = Vue.createApp({
     return {
       courseGoal: "remind vue3",
       vueLink: "https://vuejs.org/",
-      counter: 0,
+      counter: 8,
       name: "",
       confirmName: '',
     };

@@ -26,6 +26,7 @@
       <h2>Events in Action</h2>
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click.right="reduce(5)">reduce 5</button>
+      <p v-once>Starting counter: {{ counter }} 오직 한번만 평가되어 더이상 값이 업데이트 되지 않는다.</p>
       <p>Result: {{ counter }}</p>
       <input
         type="text"
