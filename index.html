@@ -9,37 +9,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- <script src="https://unpkg.com/vue@next" defer></script> -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Vue Course Goals</h1>
+      <h1>Vue Events</h1>
     </header>
-    <!-- <section id="user-goal">
-      <h2>My Course Goal</h2>
-      <p>{{ courseGoal }}</p>
-      <p>vue3 link: <a v-bind:href="vueLink">click here</a>.</p>
-    </section> -->
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click.right="reduce(5)">reduce 5</button>
-      <p v-once>Starting counter: {{ counter }} 오직 한번만 평가되어 더이상 값이 업데이트 되지 않는다.</p>
+      <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input
-        type="text"
-        v-on:input="setName($event, 'lastName')"
-        v-on:keyup.enter="confirmInput"
-      />
+      <input type="text" v-on:input="setName($event, 'Schwarzmüller')">
       <p>Your Name: {{ name }}</p>
-      <p>Your Name: {{ confirmName }}</p>
-      <!-- <form v-on:submit="submitForm"> -->
-      <form v-on:submit.prevent="submitModifier">
-        <input type="text" />
-        <button>Sign up</button>
-      </form>
     </section>
   </body>
 </html>
