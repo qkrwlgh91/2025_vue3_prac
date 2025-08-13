@@ -8,6 +8,14 @@ const app = Vue.createApp({
     };
   },
   watch: {
+    counter(value) {
+      if (value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000);
+      }
+    },
     // name(value) {
     //   if (value === "") {
     //     this.fullName = "";
@@ -26,7 +34,7 @@ const app = Vue.createApp({
   computed: {
     fullName() {
       console.log("running again!!!");
-      if (this.name === "" || this.lastName === '') {
+      if (this.name === "" || this.lastName === "") {
         return "";
       }
       return this.name + " " + this.lastName;
