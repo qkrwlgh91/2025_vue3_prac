@@ -4,33 +4,33 @@ const app = Vue.createApp({
       counter: 0,
       name: "",
       lastName: "",
-      fullName: "",
+      // fullName: "",
     };
   },
   watch: {
-    name(value) {
-      if (value === "") {
-        this.fullName = "";
-      } else {
-        this.fullName = value + " " + this.lastName;
-      }
-    },
-    lastName(value) {
-      if (value === "") {
-        this.fullName = "";
-      } else {
-        this.fullName = this.name + " " + value;
-      }
-    },
+    // name(value) {
+    //   if (value === "") {
+    //     this.fullName = "";
+    //   } else {
+    //     this.fullName = value + " " + this.lastName;
+    //   }
+    // },
+    // lastName(value) {
+    //   if (value === "") {
+    //     this.fullName = "";
+    //   } else {
+    //     this.fullName = this.name + " " + value;
+    //   }
+    // },
   },
   computed: {
-    // fullName() {
-    //   console.log("running again!!!");
-    //   if (this.name === "") {
-    //     return "";
-    //   }
-    //   return this.name + " " + "LASTNAME";
-    // },
+    fullName() {
+      console.log("running again!!!");
+      if (this.name === "" || this.lastName === '') {
+        return "";
+      }
+      return this.name + " " + this.lastName;
+    },
   },
   methods: {
     outputName() {
@@ -55,6 +55,7 @@ const app = Vue.createApp({
     },
     resetInput() {
       this.name = "";
+      this.lastName = "";
     },
   },
 });
