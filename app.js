@@ -1,8 +1,8 @@
 const app = Vue.createApp({
   data() {
     return {
-      currentUserInput: '',
-      message: 'Vue is great!',
+      currentUserInput: "",
+      message: "Vue is great!",
     };
   },
   methods: {
@@ -15,4 +15,29 @@ const app = Vue.createApp({
   },
 });
 
-app.mount('#app');
+app.mount("#app");
+
+const data = {
+  message: "hello!",
+  longMessage: "hello world!!!!!!!",
+};
+
+const handler = {
+  // trap
+  set(target, key, value) {
+    console.log(target);
+    console.log(key);
+    console.log(value);
+    if (key === "message") {
+      target.longMessage = value + " world!!";
+    }
+
+    target[key] = value;
+  },
+};
+
+const proxy = new Proxy(data, handler);
+
+proxy.message = "proxy message!!!";
+
+console.log(proxy.longMessage);
